@@ -11,19 +11,30 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
 
 public class TestNGAnnotations {
-  @Test
+  @Test(priority=1,invocationCount=2)//priority=0 if priority is not specified
   public void testcase1() {
 	  System.out.println("inside testcase1");
   }
-  @Test
+  @Test(priority=2,enabled=false)
   public void testcase2() {
 	  System.out.println("inside testcase2");
 
   }
-  @Test
+  @Test(priority=-2,invocationCount=7)
   public void testcase3() {
+	  
 	  System.out.println("inside testcase3");
 
+  }
+  @Test(priority=-5,enabled=false)
+  public void testcase4()
+  {
+	  System.out.println("inside test case 4");
+  }
+  @Test
+  public void testcase5()
+  {
+	  System.out.println("inside testcase 5");
   }
   @BeforeMethod
   public void beforeMethod() {

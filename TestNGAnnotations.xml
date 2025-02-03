@@ -2,7 +2,7 @@
 <suite parallel="false" name="Suite">
   <test name="Test">
     <classes>
-      <class> name="com.testNG.TestNGAnnotations">
+      <class name="com.testNG.TestNGAnnotations">
       		<methods>
       		<include name="testcase1"></include>
       		<include name="testcase3"></include>      		
