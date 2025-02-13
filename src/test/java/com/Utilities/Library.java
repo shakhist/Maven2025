@@ -22,7 +22,7 @@ public class Library {
 	
 	public static void ReadPropertiesFile() {
 		System.out.println("location of project:" + System.getProperty("user.dir"));
-		File objFile = new File(System.getProperty("user.dir") + "//src//test//resources//Config.Properties");
+		File objFile = new File(System.getProperty("user.dir") + "//src//test//resources//config.Properties");
 		//get propert - gives the location where project is stored
 		FileInputStream ObjInputStream;//input stream for reading file
 		try {
@@ -59,11 +59,11 @@ public class Library {
 			
 			break;
 		}
-
+System.out.println("browser launched");
 		driver.manage().window().maximize();
 		// Implicit Wait : Global waiting mechanism applicable for all webElements in a
 		// web page //All Pages
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	}
 
 	public static void PageLoadTimeOut() {

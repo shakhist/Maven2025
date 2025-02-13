@@ -1,6 +1,7 @@
 package com.Selenium;
 
 import java.util.concurrent.TimeUnit;
+//import 
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -9,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.Pages.AlertsPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -28,13 +31,13 @@ driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 //wait until the duration is reached.
 driver.manage().window().maximize();
 System.out.println(driver.getTitle());
-driver.findElement(By.id("alertButton")).click();
+driver.findElement(AlertsPage.NormalAlert).click();
  al=driver.switchTo().alert();
 System.out.println(al.getText());
 al.accept();
 JavascriptExecutor jse=(JavascriptExecutor)driver;
 jse.executeScript("window.scroll(0,250)");
-driver.findElement(By.id("timerAlertButton")).click();
+driver.findElement(AlertsPage.TimerAlert).click();
 //Thread.sleep(5000);
 WebDriverWait wait=new WebDriverWait(driver,60); //Explicit wait applicable for only one web element.
 //it will wait until expected condition is met
@@ -49,7 +52,7 @@ else
 	System.out.println("Timer alert is not validated");
 	al.dismiss();
 	
-	driver.findElement(By.id("confirmButton")).click();
+	driver.findElement(AlertsPage.confirmAlert).click();
 	al =driver.switchTo().alert();
 	System.out.println(al.getText());
 	al.dismiss();
@@ -61,7 +64,7 @@ else
 	}
 	else
 		System.out.println("Action is not confirmed");
-	driver.findElement(By.id("promtButton")).click();
+	driver.findElement(AlertsPage.promptbutton).click();
 	al=driver.switchTo().alert();
 	al.sendKeys("I am learning alerts");
 	al.accept();

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<!--<parameter name="BrowserName" value="chrome" />!-->
+<parameter name="BrowserName1" value="chrome"></parameter>
+	<test thread-count="5" name="Test1">
+		<parameter name="BrowserName" value="chrome"></parameter>	
+		<parameter name="username" value="shakhi"></parameter>
+		<parameter name="password" value="abraham"></parameter>
+		<parameter name="email" value="shakhi@gmail.com"></parameter>
+		<classes>
+			<class name="com.testNG.testngParameters" />
+		</classes>
+	</test> <!-- Testparameters -->
+	
+<!--	<test thread-count="5" name="Test2">
+		<parameter name="BrowserName" value="chrome"></parameter>	
+		<parameter name="username" value="shakhi"></parameter>
+		<parameter name="password" value="abraham"></parameter>
+		<parameter name="email" value="shakhi@gmail.com"></parameter>
+		<classes>
+			<class name="com.testNG.testngParameters" />
+		</classes>
+	</test> --><!-- Testparameters -->
+</suite> <!-- Suite -->
